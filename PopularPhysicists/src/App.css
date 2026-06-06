@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('/PopularPhysicists/src/assets/Roboto/static/Roboto-Medium.ttf');
+}
+
+
+
+* {
+  transition: 0.3s;
+}
+
+
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+
+#bg-svg {
+  position: fixed;
+  width: 100vw;
+  z-index: -2;
+}
+
+#bg-svg text {
+  animation: text-animation 5s infinite;
+}
+
+@keyframes text-animation {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(5%, 10%) rotate(4deg);
+  }
+
+  50% {
+    transform: translate(0, 20%) rotate(-4deg);
+  }
+
+  75% {
+    transform: translate(-15%, 10%) rotate(2deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+
+#dna-svg {
+  position: fixed;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 100vh;
+
+  z-index: -1;
+
+  animation: dna-animation 4s ease-in-out infinite;
+}
+
+@keyframes dna-animation {
+  0% {
+    transform: translateY(-50%) rotate(-1.5deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-50%) rotate(1.5deg) scale(0.95);
+  }
+
+  100% {
+    transform: translateY(-50%) rotate(-1.5deg) scale(1);
+  }
+}
+
+
+#window {
+  position: fixed;
+  z-index: 0;
+
+  top: 50%;
+  right: 50px;
+
+  transform: translateY(-50%);
+
+  height: 80vh;
+  width: 40vw;
+
+  background-color: #000f2a;
+  color: #fff;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+
+  border: 2px solid #013063;
+  box-shadow: 0 0 40px #013063;
+}
+
+#window div {
+  font-family: 'Roboto-Medium';
+
+  font-size: 25px;
+}
+
+
+
+
+
+#title {
+  margin-bottom: 50px;
+}
+
+#title div, span {
+  font-size: 40px;
+  color: #54b7f9;
+}
+
+
+
+#dna-word {
+  text-decoration: underline 3px #0d428a;
+  text-underline-offset: 15px;
+
+  padding-bottom: 5px;
+  margin-right: 10px;
+
+  font-family: 'Roboto-Medium';
+}
+
+
+
+#select-scientist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 200px 0px;
+
+  gap: 30px;
+}
+
+
+
+#general-icon {
+  border: 2px solid #013063;
+  border-radius: 15px;
+  box-shadow: 0 0 40px #0252a7;
+}
+
+
+
+#physicists {
+  position: fixed;
+
+  left: 23.5%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+#physicists img {
+  width: 70px;
+}
+#physicists div {
+  color: #fff;
+  font-size: 23px;
+}
+
+.physicist {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background-color: #004a8e;
+  border-radius: 15px;
+
+  padding: 20px;
+}
+
+.physicist:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+
+#clear-button {
+  background-color: #004a8e;
+  border: none;
+  color: #fff;
+
+  border-radius: 15px;
+  padding: 10px;
+
+  width: 70%;
+
+  font-size: 20px;
+
+  margin-top: 20px;
+}
+
+#clear-button:hover {
+  cursor: pointer;
+  background-color: #013063;
+}
