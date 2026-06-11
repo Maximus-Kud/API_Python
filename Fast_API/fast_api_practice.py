@@ -1,4 +1,7 @@
-from fastapi import FastAPI, Query, status, HTTPException, Cookie
+from fastapi import FastAPI, Query, status, HTTPException, Cookie, Request
+
+from fastapi.middleware.cors import CORSMiddleware
+
 from models.models import create_book_model, update_book_model
 from typing import Annotated
 
@@ -6,6 +9,23 @@ from typing import Annotated
 
 app = FastAPI()
 books = []
+
+
+
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins=["*"],
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"],
+)
+
+@app.middleware("http")
+async def logger(request: Request, call_next):
+    print(f"Пришел запрос: {request.method} {request.url}")
+    response = await call_next(request)
+    print(f"Статус ответа: {response.status_code}")
+    return response
 
 
 

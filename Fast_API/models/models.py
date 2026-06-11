@@ -1,14 +1,14 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Annotated
-from fastapi import Cookie
+from fastapi import Form
 
 
 
 class create_book_model(BaseModel):
-  title: Annotated[str, Field(..., min_length=3), Cookie()]
-  author: Annotated[str, Field(..., min_length=3), Cookie()]
+  title: Annotated[str, Form(..., min_length=3)]
+  author: Annotated[str, Form(..., min_length=3)]
 
 class update_book_model(BaseModel):
   book_id: int
-  title: Annotated[str, Field(..., min_length=3), Cookie()]
-  author: Annotated[str, Field(..., min_length=3), Cookie()]
+  title: Annotated[str, Form(..., min_length=3)]
+  author: Annotated[str, Form(..., min_length=3)]
